@@ -1,5 +1,6 @@
 package com.learningByDoing.learn_spring_aop.aopexample.business;
 
+import com.learningByDoing.learn_spring_aop.aopexample.annotations.TrackTime;
 import com.learningByDoing.learn_spring_aop.aopexample.data.DataService1;
 import org.springframework.stereotype.Service;
 
@@ -14,9 +15,10 @@ public class BusinessService1 {
         this.dataService1 = dataService1;
     }
 
+    @TrackTime //user defined annotation
     public int calculateMax(){
         int[] data = dataService1.getData();
-//        throw new RuntimeException("Something went wrong");
+        //        throw new RuntimeException("Something went wrong");
         return Arrays.stream(data).max().orElse(0);
     }
 }
