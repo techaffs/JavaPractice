@@ -31,6 +31,11 @@ public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExce
         return new ResponseEntity<ErrorDetails>(errorDetails, HttpStatus.NOT_FOUND);
     }
 
+    @ExceptionHandler(RepositoryNotInitializedException.class)
+    public ResponseEntity<String> handleRepositoryNotInitializedException(RepositoryNotInitializedException ex) {
+        return new ResponseEntity<>(ex.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
     @ExceptionHandler(PostNotFoundException.class)
     public final ResponseEntity<ErrorDetails> handlePostNotFoundException(Exception ex, WebRequest request) throws Exception{
 

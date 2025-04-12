@@ -1,5 +1,6 @@
 package com.learningByDoing.restful_web_services.socialmedia;
 
+import com.learningByDoing.restful_web_services.socialmedia.model.User;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;

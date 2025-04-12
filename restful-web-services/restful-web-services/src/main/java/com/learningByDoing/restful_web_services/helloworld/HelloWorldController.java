@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Locale;
 
 @RestController
+//@CrossOrigin(origins = "http://localhost:3000")
 public class HelloWorldController {
 
     private MessageSource messageSource;
@@ -22,7 +23,7 @@ public class HelloWorldController {
 
     @GetMapping("/hello-world-bean")
     public HelloWorldBean helloWorldBean(){
-        return new HelloWorldBean("Hello World!");
+        return new HelloWorldBean("Hello World! bean");
     }
 
     @GetMapping("/hello-world/path-variable/{name}")
